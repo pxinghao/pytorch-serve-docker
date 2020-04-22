@@ -8,16 +8,7 @@ services:
 scripts:
   - docker build -t pxinghao/pytorch-serve-docker -f Dockerfile .
 
-# after_success:
-#   - docker build -t pxinghao/multi-client ./client
-#   - docker build -t pxinghao/multi-nginx  ./nginx
-#   - docker build -t pxinghao/multi-server ./server
-#   - docker build -t pxinghao/multi-worker ./worker
-#   # Log in to the docker CLI
-#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-#   # Take those images and push to docker hub
-#   - docker push pxinghao/multi-client
-#   - docker push pxinghao/multi-nginx
-#   - docker push pxinghao/multi-server
-#   - docker push pxinghao/multi-worker
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push pxinghao/pytorch-serve-docker
 

@@ -1,7 +1,7 @@
 FROM python:3.8.2
 
 # Install Java
-RUN apt update && apt install -y openjdk-11-jdk
+RUN apt-get update && apt-get install -y openjdk-11-jdk
 
 # Install torch and torchserve
 RUN pip install torch torchtext torchvision sentencepiece
