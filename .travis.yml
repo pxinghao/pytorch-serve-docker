@@ -6,7 +6,7 @@ services:
   - docker
 
 scripts:
-  - docker build -t pxinghao/pytorch-serve-docker -f .Dockerfile .
+  - docker build -t pxinghao/pytorch-serve-docker -f Dockerfile .
 
 # after_success:
 #   - docker build -t pxinghao/multi-client ./client
